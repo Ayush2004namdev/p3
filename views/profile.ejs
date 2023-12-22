@@ -1,0 +1,40 @@
+<% include ./partials/header.ejs %>
+<div class="profile bg-zinc-700 w-full text-white flex flex-col items-center pt-1">
+   <form id="formicon" hidden action="/upload" method="post" enctype="multipart/form-data" >
+    <input type="file" name="image">
+   </form>
+    <div class="relative">
+        <span class="absolute bottom-0 right-0 p-1.5 w-8 h-8 bg-red-100 rounded-full "><i id="pencil" class="ri-pencil-line"></i></span>
+        <div class="profdets w-32 h-32 bg-zinc-300 rounded-full mt-20 overflow-hidden ">
+            <img src="/images/uploads/<%=user.Image%>" alt="">
+        </div>
+    </div>
+    <h1 class="text-3xl font-semibold mt-5">shan gour</h1>
+    <h3 class="text-md ">@username</h3>
+    <a class="px-6 py-2 bg-zinc-500 text-xs rounded-full mt-3 " href="/edit">edit</a>
+   <a href="/add"> <button class="px-5 py-2 bg-red-500 rounded-lg mt-2 ">Add new post</button>  </a>
+</div>
+<div class="cards flex flex-wrap px-10 py-10 gap-10">
+    <div>
+        
+        <div class="card w-52 h-40 bg-zinc-200 rounded-lg overflow-hidden ">
+            <img class="w-full h-full object-cover" src="/images/uploads/<%=user?.posts[0]?.image%>" alt="">
+        </div>
+        <a href="/show/posts" class="inline-block font-semibold pt-2 pl-2">your pins</a>
+        <h3 class=" opacity-60 text-xs pl-2"><%=user.posts.length%></h3>
+    </div>
+</div>
+
+
+
+<script>
+    document.querySelector("#pencil").
+    addEventListener("click",function(){
+        document.querySelector("#formicon input").click();
+    })
+
+    document.querySelector("#formicon input").addEventListener("change",function(){
+        document.querySelector("#formicon").submit();
+    })
+</script>
+<% include ./partials/footer.ejs %>

@@ -1,0 +1,19 @@
+<% include ./partials/header.ejs %>
+
+  <div class="w-screen h-screen   flex bg-zinc-400 items-center justify-center">
+    <div class="rounded-[20px] w-96 h-[60vh] bg-zinc-100 px-3 py-4">
+      <h1 class="text-4xl leading-none tracking-tighter text-center mt-4">Create Account</h1>
+      <form class="px-5 " action="/register" method="post">
+          <input class="rounded-[10px]  outline-red-500 px-7 block w-full  py-2  mt-2 " placeholder="username" type="text" name="username">
+          <input class="rounded-[10px]  outline-red-500 px-7 block w-full  py-2  mt-2 " placeholder="email" type="email" name="email">
+          <input class="rounded-[10px]  outline-red-500 px-7 block w-full  py-2  mt-2 " placeholder="number" type="number" name="number">
+        <input  class="rounded-[10px] outline-red-500 px-7 block w-full  py-2  mt-2 " placeholder="password" type="password" name="password">
+        <input class="outline-red-500 px-7 block w-full  py-2  mt-5 mb-2 rounded-full bg-red-600 text-white" type="submit" value="create account">
+      </form>
+
+      <p class="text-xs px-12 text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur cum aut minima ipsum assumenda quod velit ex totam?</p>
+      <a href="/" class="inline-block text-blue-300 text-sm w-full py-4 px-7 text-center">Existing Login</a>
+    </div>
+  </div>
+
+<% include ./partials/footer.ejs %>
